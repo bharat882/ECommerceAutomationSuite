@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-05T04:31:20 EDT" name="E2E Suite" finished-at="2025-09-05T04:31:38 EDT" duration-ms="17788">
+    <groups>
+    </groups>
+    <test started-at="2025-09-05T04:31:20 EDT" name="Acceptance Tests" finished-at="2025-09-05T04:31:38 EDT" duration-ms="17788">
+      <class name="com.ecommerce.automation.tests.AcceptanceTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.ecommerce.automation.tests.AcceptanceTest@7d0b7e3c]" started-at="2025-09-05T04:31:20 EDT" name="setUp" finished-at="2025-09-05T04:31:23 EDT" duration-ms="2655" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="fullPurchaseFlow()[pri:0, instance:com.ecommerce.automation.tests.AcceptanceTest@7d0b7e3c]" started-at="2025-09-05T04:31:23 EDT" name="fullPurchaseFlow" description="Happy path: login, add to cart, checkout" finished-at="2025-09-05T04:31:29 EDT" duration-ms="5800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fullPurchaseFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecommerce.automation.tests.AcceptanceTest@7d0b7e3c]" started-at="2025-09-05T04:31:29 EDT" name="tearDown" finished-at="2025-09-05T04:31:29 EDT" duration-ms="300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.ecommerce.automation.tests.AcceptanceTest@7d0b7e3c]" started-at="2025-09-05T04:31:29 EDT" name="setUp" finished-at="2025-09-05T04:31:31 EDT" duration-ms="1589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="invalidLoginShowsError()[pri:0, instance:com.ecommerce.automation.tests.AcceptanceTest@7d0b7e3c]" started-at="2025-09-05T04:31:31 EDT" name="invalidLoginShowsError" description="Invalid login display error" finished-at="2025-09-05T04:31:32 EDT" duration-ms="664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidLoginShowsError -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecommerce.automation.tests.AcceptanceTest@7d0b7e3c]" started-at="2025-09-05T04:31:32 EDT" name="tearDown" finished-at="2025-09-05T04:31:32 EDT" duration-ms="256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ecommerce.automation.tests.AcceptanceTest -->
+      <class name="com.ecommerce.automation.tests.LoginDataTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:32 EDT" name="setUp" finished-at="2025-09-05T04:31:33 EDT" duration-ms="1468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:33 EDT" name="loginScenarios" data-provider="loginCredentials" finished-at="2025-09-05T04:31:34 EDT" duration-ms="606" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[VALID]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:34 EDT" name="tearDown" finished-at="2025-09-05T04:31:34 EDT" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:34 EDT" name="setUp" finished-at="2025-09-05T04:31:36 EDT" duration-ms="1283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:36 EDT" name="loginScenarios" data-provider="loginCredentials" finished-at="2025-09-05T04:31:36 EDT" duration-ms="465" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[locked_out_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ERROR_LOCKED]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:36 EDT" name="tearDown" finished-at="2025-09-05T04:31:36 EDT" duration-ms="290" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:36 EDT" name="setUp" finished-at="2025-09-05T04:31:38 EDT" duration-ms="1242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:38 EDT" name="loginScenarios" data-provider="loginCredentials" finished-at="2025-09-05T04:31:38 EDT" duration-ms="360" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalid_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_pass]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ERROR_CREDENTIALS]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecommerce.automation.tests.LoginDataTest@3ba987b8]" started-at="2025-09-05T04:31:38 EDT" name="tearDown" finished-at="2025-09-05T04:31:38 EDT" duration-ms="273" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ecommerce.automation.tests.LoginDataTest -->
+    </test> <!-- Acceptance Tests -->
+  </suite> <!-- E2E Suite -->
+</testng-results>

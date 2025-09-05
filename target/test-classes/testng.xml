@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="E2E Suite" verbose="1">
+    <listeners>
+        <!-- Allure TestNG listener -->
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Acceptance Tests">
+        <classes>
+            <class name="com.ecommerce.automation.tests.AcceptanceTest"/>
+            <class name="com.ecommerce.automation.tests.LoginDataTest"/>
+        </classes>
+    </test>
+</suite>

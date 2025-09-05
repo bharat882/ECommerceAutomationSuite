@@ -1,0 +1,6 @@
+com\ecommerce\automation\tests\SanityTest.class
+com\ecommerce\automation\base\TestListener.class
+com\ecommerce\automation\tests\AcceptanceTest.class
+com\ecommerce\automation\base\BaseTest.class
+com\ecommerce\automation\tests\TestData.class
+com\ecommerce\automation\tests\LoginDataTest.class
