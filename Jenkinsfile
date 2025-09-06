@@ -1,16 +1,26 @@
+// Jenkinsfile (Windows‐only, no “sh” steps, no Groovy‐interpolated secrets)
+
 pipeline {
   agent any
 
   tools {
-    jdk 'JDK17'
-    maven 'Maven3'
+    jdk    'JDK17'
+    maven  'Maven3'
+    allure 'Allure'               // must match your Allure CLI installation name
   }
 
   environment {
-    ALLURE_RESULTS = "${env.WORKSPACE}/target/allure-results"
+    // Windows uses %WORKSPACE% and backslashes
+    ALLURE_RESULTS = '%WORKSPACE%\\target\\allure-results'
   }
 
   stages {
+    stage('Clean Workspace') {
+      steps {
+        deleteDir()
+      }
+    }
+
     stage('Checkout') {
       steps {
         checkout scm
@@ -19,41 +29,39 @@ pipeline {
 
     stage('Build & Test') {
       steps {
-        // bind your credentials as env vars if needed
         withCredentials([usernamePassword(
           credentialsId: 'saucedemo-creds',
           usernameVariable: 'SAUCE_USER',
           passwordVariable: 'SAUCE_PASS'
         )]) {
-          sh """
-            mvn clean test \
-              -Durl=https://www.saucedemo.com \
-              -Dusername=$SAUCE_USER \
-              -Dpassword=$SAUCE_PASS \
-              -Dallure.results.directory=${ALLURE_RESULTS}
-          """
+          // Use a literal string ('''…''') so Jenkins doesn’t perform Groovy interpolation
+          bat '''
+            mvn clean test ^
+              -Durl=https://www.saucedemo.com ^
+              -Dusername=%SAUCE_USER% ^
+              -Dpassword=%SAUCE_PASS% ^
+              -Dallure.results.directory=%ALLURE_RESULTS%
+          '''
         }
       }
     }
 
     stage('Generate Allure Report') {
       steps {
-        sh "mvn allure:report"
+        bat 'mvn allure:report'
       }
     }
   }
 
   post {
     always {
-      // Archive results and report
-      archiveArtifacts artifacts: 'target/allure-results/**', fingerprint: true
+      archiveArtifacts artifacts: 'target/allure-results/**',          fingerprint: true
       archiveArtifacts artifacts: 'target/site/allure-maven-plugin/**', fingerprint: true
 
-      // Publish interactive report
-      allure([
+      allure(
         reportBuildPolicy: 'ALWAYS',
         results: [[path: 'target/allure-results']]
-      ])
+      )
     }
   }
 }
